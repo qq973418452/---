@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0,
+    maximum-scale=1.0">
+    <title>弹性盒布局</title>
+    <style>
+        body {
+            font: 24px Helvetica;
+            background: #fff;
+        }
+        .main {
+            min-height: 500px;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-flow: row;
+        }
+        .main > article {
+            margin: 4px;
+            padding: 5px;
+            border-radius: 7pt;
+            background: #719DCA;
+            flex: 3;
+            order: 2;
+        }
+        .main > nav {
+            margin: 4px;
+            padding: 5px;
+            border-radius: 7pt;
+            background: #ffba41;
+            flex: 1;
+            order: 1;
+        }
+        .main > aside {
+            margin: 4px;
+            padding: 5px;
+            border-radius: 7pt;
+            background: #ffba41;
+            flex: 1;
+            order: 3;
+        }
+        header,footer {
+            display: block;
+            margin: 4px;
+            padding: 5px;
+            min-height: 100px;
+            border: 2px solid #FFBA41;
+            border-radius: 7pt;
+            background: #fff;
+        }
+        @media all and (max-width: 640px){
+            .main{
+                flex-flow: column;
+            }
+            .main > artcle, .main > nav ,.main > aside {
+                order: 0;
+            }
+            .main > nav, .main > aside, header, footer {
+                min-height: 50px;
+                max-height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <div class="main">
+        <article>article</article>
+        <nav>nav</nav>
+        <aside>aside</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+</html>
